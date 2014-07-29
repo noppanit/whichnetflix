@@ -4,10 +4,14 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "baconjs": "^0.7.19",
     "express": "3.x",
     "jade": "*",
+    "jquery": "^2.1.1",
     "mongodb": "^1.4.7",
     "mongoose": "^3.8.14",
+    "nib": "^1.0.3",
+    "q": "^1.0.1",
     "stylus": "*"
   }
 }

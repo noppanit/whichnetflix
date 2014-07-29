@@ -1,4 +1,4 @@
-module.exports.set = function(app, stylus, express) {
+module.exports.set = function(app, stylus, express, nib) {
 
     function compile(str, path) {
       return stylus(str)
