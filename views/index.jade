@@ -6,7 +6,8 @@ block content
         input(type='text', name='q', id='q', placeholder='Movie title, e.g Star Trek')
 
         div(id='movies', data-bind='foreach: movies')
-            div(class='movie')
-                div(name='title', data-bind='html : title')
-                div(name='flag')
-                    img(data-bind='attr: { src : flag}')
+            a(data-bind='attr: {href : netflix}')
+                div(class='movie')
+                    div(class='title', data-bind='html : title')
+                    div(class='flags', data-bind='foreach : flags')
+                        img(data-bind='attr: { src : url}')

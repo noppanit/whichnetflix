@@ -9,10 +9,28 @@ tables.each(function(table_idx, table) {
         function(idx, item) {
             var movie = {};
             var item = $(item);
-            movie['flag'] = $(item.find('td img')[0]).attr('src') === 'http://bit.ly/VwOStb' ? 'uk' : 'usa';
-            movie['title'] = $(item.find('td')[2]).find('b a').html();
-            movie['netflix_link'] = $(item.find('td')[2]).find('b a').attr('href');
-            movie['imdb_link'] = $(item.find('td')[2]).find('i a').attr('href');
+
+            var columns = item.find('td');
+            var americanFlag = $(columns[0]).find('img').length !== 0 ? 'usa' : '';
+            var britishFlag = $(columns[1]).find('img').length !== 0 ? 'uk' : '';
+
+            var flags = [];
+            if(americanFlag !== '') flags.push('us');
+            if(britishFlag !== '') flags.push('uk');
+
+            movie['flag'] = flags.join(',');
+
+            var thirdColumn = $(columns[2]);
+            var year = thirdColumn.find('b').clone();
+            $('a', year).remove();
+
+            var title = thirdColumn.find('b a');
+
+            movie['title'] = title.html();
+            movie['netflix_link'] = title.attr('href');
+            movie['year'] = $.trim(year.html()).replace('(', '').replace(')','');
+
+            movie['imdb_link'] = thirdColumn.find('i a').attr('href');
             movies.push(movie);
         }
     );
@@ -20,4 +38,3 @@ tables.each(function(table_idx, table) {
 });
 
 JSON.stringify(movies);
-        

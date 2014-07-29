@@ -24,7 +24,7 @@ queryRequests.flatMapLatest(function(request) {
     ));
 }).onValue(function(returnedMovies) {
     movies([]);
-    movies((_.flatten(returnedMovies)));
+    movies(_.flatten(returnedMovies));
 });
 
 

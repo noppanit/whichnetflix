@@ -31,3 +31,6 @@ input[type=text] {
 #movies .movie .title {
   margin-bottom: 5px;
 }
+#movies .movie .flags img {
+  margin-left: 15px;
+}
