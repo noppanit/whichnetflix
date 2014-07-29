@@ -15,6 +15,7 @@ var movieFinder = new mongodb.set(mongoose, q, underscore)();
 
 controllers.set(app, movieFinder);
 
-var server = app.listen(3000, function() {
+var port = Number(process.env.PORT || 3000);
+var server = app.listen(port, function() {
     console.log('Listening on port %d', server.address().port);
 });
