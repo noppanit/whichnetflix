@@ -3,5 +3,12 @@ html
   head
     title #{title}
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+
+    body
+        block content
+
+    script(type='text/javascript', src='/javascripts/vendors/underscore/underscore-min.js')
+    script(type='text/javascript', src='/javascripts/vendors/jquery/jquery-2.1.1.min.js')
+    script(type='text/javascript', src='/javascripts/vendors/bacon/Bacon.min.js')
+    script(type='text/javascript', src='/javascripts/vendors/knockoutjs/knockout-3.1.0.js')
+    script(type='text/javascript', src='/javascripts/index.js')

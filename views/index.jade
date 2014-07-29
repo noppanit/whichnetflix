@@ -1,5 +1,6 @@
 extend layout
 block content
-    input(type='text', name='search', id='search')
+    input(type='text', name='q', id='q')
 
-    
+    div(id='moives', data-bind='foreach: movies')
+        div(name='title', data-bind='html : title')
