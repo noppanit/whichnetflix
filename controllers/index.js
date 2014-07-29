@@ -1,6 +1,6 @@
 module.exports.set = function(app, movieFinder) {
    app.get('/', function(req, res){
-     res.render('index', { title : 'Home' } );
+     res.render('index', { title : 'Which netflix?' } );
    });
 
    app.get('/search', function(req, res) {

@@ -5,14 +5,13 @@ var express = require('express'),
     controllers = require('./controllers'),
     config = require('./config.js'),
     mongodb = require('./lib/mongodb.js'),
-    baconjs = require('baconjs'),
-    q = require('q'),
-    jquery = require('jquery');
+    underscore = require('underscore'),
+    q = require('q');
 
 var app = express();
 config.set(app, stylus, express, nib);
 
-var movieFinder = new mongodb.set(mongoose, q)();
+var movieFinder = new mongodb.set(mongoose, q, underscore)();
 
 controllers.set(app, movieFinder);
 

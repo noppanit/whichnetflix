@@ -1,6 +1,12 @@
 extend layout
 block content
-    input(type='text', name='q', id='q')
+    main(id='wrapper')
+        h1 Which Netflix?
 
-    div(id='moives', data-bind='foreach: movies')
-        div(name='title', data-bind='html : title')
+        input(type='text', name='q', id='q', placeholder='Movie title, e.g Star Trek')
+
+        div(id='movies', data-bind='foreach: movies')
+            div(class='movie')
+                div(name='title', data-bind='html : title')
+                div(name='flag')
+                    img(data-bind='attr: { src : flag}')
